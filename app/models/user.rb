@@ -11,4 +11,12 @@ class User < ApplicationRecord
   validates :post_counter,
             numericality: { only_integer: true, greater_than_or_equal_to: 0,
                             message: 'must be an integer greater than or equal to zero' }
+
+  after_initialize :set_default_post_counter
+
+  private
+
+  def set_default_post_counter
+    self.post_counter ||= 0
+  end
 end

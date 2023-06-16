@@ -1,1 +1,29 @@
-<h1>List of users by id</h1>
+<div class ="heading">
+<img src='<%= @user.photo %>' alt="User" class="picture"/>
+<div class='usercontainer'>
+  <h2><%= @user.name %></h2>
+  <p class="counter">Number of posts: <%= @user.post_counter %></p>
+</div>
+</div>
+<div class='bio'>
+  <h3>Bio</h3>
+  <p><%= @user.bio %></p>
+</div>
+<div class="recentposts">
+<% @user.three_recent_posts.each do |post| %>
+  <%= link_to user_post_path(user_id: @user.id, author_id: post.id) do %>
+<div class="usercontainer space">
+<h2>Post #<%= post.id %></h2>
+    
+    <p><%= post.text %></p>
+     <div class="counter">
+            <span class="comments">Comments: <%= post.comments_counter%>, </span>
+            <span class="likes">Likes:<%= post.likes_counter%></span>
+        </div>
+</div>
+<%end%> 
+<%end%> 
+<%= link_to 'See all Posts',  user_posts_path(user_id: @user.id), class: 'button' %>
+</div>
+
+

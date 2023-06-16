@@ -1,1 +1,12 @@
-<h1>List of users</h1>
+<div class="container"> 
+<% @users.each do |user| %>
+  <%= link_to user_path(user.id) do %>
+    <div class ="usercontainer">
+  <li class= "user">
+  <%=user.name %>
+  </li>
+  <span class="counter"> Number of Posts: <%=user.post_counter %> </span>
+  </div>
+  <% end %>
+<% end %>
+</div>
