@@ -1,0 +1,75 @@
+.container {
+  width: 100vw;
+}
+
+.user {
+  width: 50vw;
+  height: 10vh;
+  font-size: 4vw;
+  list-style: none;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.counter {
+  font-size: 2vw;
+  text-align: end;
+  margin-left: 30%;
+  align-self: self-end;
+  justify-self: left;
+}
+
+.usercontainer {
+  border: 1px solid black;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+  margin-top: 5%;
+}
+
+.picture {
+  width: 10vw;
+  margin-top: 5%;
+}
+
+.heading {
+  display: flex;
+}
+
+.bio {
+  border: 1px solid black;
+  width: 60.2vw;
+  padding: 1%;
+  font-size: 2vw;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+
+.button {
+  width: 5vw;
+  height: 2vh;
+  background-color: rgb(226, 226, 226);
+  border: solid 2px black;
+  padding: 1%;
+}
+
+.usercontainer.space {
+  margin-bottom: 2%;
+}
+
+.usercontainer.comment {
+  margin-top: 1px;
+}
+
+.commentcontainer {
+  width: 50vw;
+}
+
+.commentheader {
+  width: 51vw;
+  border: solid 1px black;
+}
