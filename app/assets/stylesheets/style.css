@@ -73,3 +73,12 @@ a {
   width: 51vw;
   border: solid 1px black;
 }
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.commentbtn {
+  width: 15vw;
+}
