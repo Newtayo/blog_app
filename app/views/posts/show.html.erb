@@ -1,27 +1,18 @@
-<div class="commentcontainer">
-    <div class='commentheader' >
-        <h2>Post #<%= @post.id%> by <%= @post.author.name%></h2>
-        <div class="counter">
-        <span class="comments">Comments: <%= @post.comments_counter%>, </span>
-        <span class="likes">Likes:<%= @post.likes_counter%></span>
-    </div>
- 
-    <h3>
-        <%= @post.text%>
-    </h2>
-    <div class="usercontainer comment">
-    <button class ="commentbtn"><%= link_to "New Comment", new_user_post_comment_path(@user, @post) %></button>
-    <button class ="commentbtn"><%= button_to "Add Likes", user_post_likes_path(@user, @post), method: :post %>
-</button>
+<div class='commentheader'>
+  <h2>Post #<%= @post.id %> by <%= @post.author.name %></h2>
+  <div class="counter">
+    <span class="comments">Comments: <%= @post.comments_counter %>, </span>
+    <span class="likes">Likes: <%= @post.likes_counter %></span>
+  </div>
+  <h3><%= @post.text %></h2>
 </div>
+<div class="usercontainer comment">
+  <% @comments = @post.comments %>
+  <% @comments.each do |comment| %>
+    <div id="single-comment">
+      <span><%= comment.author.name %>: <%= comment.text %></span>
     </div>
-            <div class="usercontainer comment">
-                <% @comments=Post.find(@post.id).comments %>
-                    <% @comments.each do |comment| %>
-                        <div >
-                            <span> <%= comment.author.name %> : <%= comment.text %></span>
-                        </div>
-                  
-                    <% end %>
-    </div>
-    </div>
+  <% end %>
+  <%= link_to "New Comment", new_user_post_comment_path(@user, @post) %>
+  <%= button_to "Add Likes", user_post_likes_path(@user, @post), method: :post %>
+</div>
