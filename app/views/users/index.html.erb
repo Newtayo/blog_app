@@ -3,6 +3,7 @@
     <%= link_to user_path(user.id) do %>
       <div class="usercontainer">
         <li class="user">
+        <%= user.id %>
           <%= user.name %>
         </li>
         <span class="counter"> Number of Posts: <%= user.post_counter %> </span>
