@@ -82,3 +82,24 @@ a {
 .commentbtn {
   width: 15vw;
 }
+
+.contain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.field-login {
+  display: flex;
+  margin-bottom: 10%;
+}
+
+.large-button {
+  width: 13vw;
+}
