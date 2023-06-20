@@ -128,6 +128,11 @@ To run tests, run the following command:
 - Twitter: [@Omortayoh](https://twitter.com/Omortayoh)
 - LinkedIn: [Akande Abdulwasiu](https://linkedin.com/in/AkandeAbdulwasiu)
 
+👤 **Abu Raihan**
+- GitHub: [@raihan2bd](https://github.com/raihan2bd)
+- Twitter: [@raihan2bd](https://twitter.com/raihan2bd)
+- LinkedIn: [raihan2bd](https://linkedin.com/in/raihan2bd)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
