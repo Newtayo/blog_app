@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   before do
-    @user = User.create(name: 'John Doe', photo: 'live to photo', bio: 'live to bio', post_counter: 0)
+    @user = User.create(name: 'John Doe', photo: 'livetophoto.jpg', bio: 'live to bio', post_counter: 0)
     @post = Post.create(title: 'My post', text: 'Post body', author: @user, comments_counter: 0, likes_counter: 0)
     Post.new(title: 'My post', text: 'Post body', author: @user, comments_counter: 0, likes_counter: 0)
   end

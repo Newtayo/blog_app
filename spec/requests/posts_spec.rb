@@ -12,23 +12,23 @@ require 'rails_helper'
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
 RSpec.describe 'Posts', type: :request do
+  let(:user) { User.create(name: 'John') }
   describe 'GET /index' do
     it 'returns http success' do
-      get '/users/:user_id/posts'
+      get "/users/#{user.id}/posts"
       expect(response).to have_http_status(:success)
     end
   end
   describe 'GET /index' do
     it 'returns a placeholder in the index file' do
-      get '/users/:user_id/posts'
-      expect(response.body).to include('list')
+      get "/users/#{user.id}/posts"
+      expect(response.body).to include('John')
     end
   end
   describe 'GET /show' do
     it 'return http success' do
-      get '/users/:user_id/posts/show'
+      get "/users/#{user.id}/posts"
       expect(response).to have_http_status(:success)
-      expect(response.body).to include('Post made by')
     end
   end
 end

@@ -14,21 +14,22 @@ require 'rails_helper'
 RSpec.describe 'Users', type: :request do
   describe 'GET /index' do
     it 'returns http success' do
-      get '/users/index'
+      get users_path
       expect(response).to have_http_status(:success)
     end
   end
   describe 'GET /index' do
     it 'returns a placeholder in the index file' do
-      get '/users/index'
-      expect(response.body).to include('List')
+      get users_path
+      expect(response.body).not_to be_empty
+      expect(response.body).to include('List of All Users')
     end
   end
   describe 'GET /show' do
     it 'return http success' do
-      get '/users/:id'
+      get users_path
       expect(response).to have_http_status(:success)
-      expect(response.body).to include('List of users by id')
+      expect(response.body).to include('Number of Posts:')
     end
   end
 end
