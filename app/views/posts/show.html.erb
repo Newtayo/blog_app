@@ -1,5 +1,5 @@
 <div class='commentheader'>
-  <h2>Post #<%= @post.id %> by <%= @post.author.name %></h2>
+  <h2><%= @post.title %> by <%= @post.author.name %></h2>
   <div class="counter">
     <span class="comments">Comments: <%= @post.comments_counter %>, </span>
     <span class="likes">Likes: <%= @post.likes_counter %></span>
