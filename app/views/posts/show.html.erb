@@ -12,7 +12,10 @@
     <div id="single-comment">
       <span><%= comment.author.name %>: <%= comment.text %></span>
     </div>
-  <% end %>
+    <% if can? :destroy, comment%>
+    <%= link_to "Delete Comment", user_post_comment_path(user_id: @user.id, post_id: @post.id, id: comment.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    <% end %>
+    <% end %>
   <%= link_to "New Comment", new_user_post_comment_path(@user, @post) %>
   <%= button_to "Add Likes", user_post_likes_path(@user, @post), method: :post %>
 </div>
