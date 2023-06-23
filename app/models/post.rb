@@ -4,11 +4,16 @@ class Post < ApplicationRecord
   has_many :comments
 
   after_save :update_posts_count
+  after_destroy :delete_posts_count
 
   before_validation :initialize_counters
 
   def update_posts_count
     author.increment!(:post_counter)
+  end
+
+  def delete_posts_count
+    author.decrement!(:post_counter)
   end
 
   def recent_comments

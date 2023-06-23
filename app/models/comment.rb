@@ -3,10 +3,15 @@ class Comment < ApplicationRecord
   belongs_to :post, class_name: 'Post'
 
   after_save :update_comment_count
+  after_destroy :delete_comment_count
 
   private
 
   def update_comment_count
     post.increment!(:comments_counter)
+  end
+
+  def delete_comment_count
+    post.decrement!(:comments_counter)
   end
 end
