@@ -27,7 +27,6 @@ class CommentsController < ApplicationController
         end
         format.json { render json: @comment, status: :created }
 
-
       else
         format.html do
           render :new, notice: 'Comment was not saved.'
